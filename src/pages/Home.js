@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import useToggle from "../hooks/useToggle";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 import Hero from "../components/Hero";
 import Products from "../components/Products";
 import Feature from "../components/Feature";
@@ -6,8 +9,12 @@ import Footer from "../components/Footer";
 import { productData } from "../components/Products/data";
 
 function Home() {
+  const [isOpen, toggle] = useToggle(false);
+
   return (
     <HomeContainer>
+      <Navbar toggle={toggle} />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
       <Hero />
       <Products heading="Elige tu Box favorito" data={productData} />
       <Feature />

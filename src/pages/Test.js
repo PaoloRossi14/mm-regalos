@@ -8,6 +8,10 @@ import {
   getTotalCarrito,
 } from "../features/carrito/carritoSlice";
 import { TextField, Button } from "@material-ui/core";
+import useToggle from "../hooks/useToggle";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
+import Footer from "../components/Footer";
 
 const products = [
   { id: 1, name: "Product 1", price: 100 },
@@ -20,6 +24,7 @@ function Test() {
   const user = useSelector(selectUser);
   const total = getTotalCarrito(carrito);
   const dispatch = useDispatch();
+  const [isOpen, toggle] = useToggle(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,61 +33,78 @@ function Test() {
   };
 
   return (
-    <TestContainer>
-      <div className="auth">
-        {user ? (
-          <p>You are sign in</p>
-        ) : (
-          <>
-            <h1>Sign in</h1>
-            <form onSubmit={handleSubmit}>
-              <TextField name="email" label="Email" variant="outlined" />
-              <TextField name="password" label="Password" variant="outlined" />
-              <Button type="submit" variant="contained" color="primary">
-                Ingresar
-              </Button>
-            </form>
-          </>
-        )}
-      </div>
-      <div className="chart">
+    <>
+      <Navbar toggle={toggle} />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <TestContainer>
+        <div className="auth">
+          {user ? (
+            <p>You are sign in</p>
+          ) : (
+            <>
+              <h1>Sign in</h1>
+              <form onSubmit={handleSubmit}>
+                <TextField
+                  name="email"
+                  label="Email"
+                  variant="outlined"
+                  type="email"
+                  required
+                />
+                <TextField
+                  name="password"
+                  label="Password"
+                  variant="outlined"
+                  type="password"
+                  required
+                />
+                <Button type="submit" variant="contained" color="primary">
+                  Ingresar
+                </Button>
+              </form>
+            </>
+          )}
+        </div>
+        <div className="chart">
+          <div>
+            <h1>Carrito</h1>
+            <ul>
+              {carrito.map((item, idx) => (
+                <li key={idx}>
+                  {item.name} <p>S/ {item.price}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h1>Total</h1>
+            <strong>S/ {total}</strong>
+          </div>
+        </div>
         <div>
-          <h1>Carrito</h1>
-          <ul>
-            {carrito.map((item, idx) => (
-              <li key={idx}>
-                {item.name} <p>S/ {item.price}</p>
+          <h2>Productos</h2>
+          <ProductList>
+            {products.map((product) => (
+              <li key={product.id}>
+                <p>{product.name}</p>
+                <strong>S/ {product.price}</strong>
+                <ButtonStyled
+                  dark
+                  // onClick={() => dispatch(addItem({ ...product, quantity: 1 }))}
+                  onClick={() => dispatch(addItem(product))}
+                >
+                  Agregar
+                </ButtonStyled>
+                <ButtonStyled onClick={() => dispatch(removeItem(product.id))}>
+                  Eliminar
+                </ButtonStyled>
               </li>
             ))}
-          </ul>
+          </ProductList>
         </div>
-        <div>
-          <h1>Total</h1>
-          <strong>S/ {total}</strong>
-        </div>
-      </div>
-      <div>
-        <h2>Productos</h2>
-        <ProductList>
-          {products.map((product) => (
-            <li key={product.id}>
-              <p>{product.name}</p>
-              <strong>S/ {product.price}</strong>
-              <ButtonStyled
-                dark
-                // onClick={() => dispatch(addItem({ ...product, quantity: 1 }))}
-                onClick={() => dispatch(addItem(product))}
-              >
-                Agregar
-              </ButtonStyled>
-              <ButtonStyled onClick={() => dispatch(removeItem(product.id))}>
-                Eliminar
-              </ButtonStyled>
-            </li>
-          ))}
-        </ProductList>
-      </div>
-    </TestContainer>
+      </TestContainer>
+      <Footer />
+    </>
   );
 }
 
@@ -93,8 +115,9 @@ const TestContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: calc(100vh - 179px);
   gap: 2rem;
+  padding: 2rem;
 
   .chart {
     display: flex;

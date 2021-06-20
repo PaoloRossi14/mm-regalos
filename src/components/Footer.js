@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
@@ -50,7 +51,7 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default memo(Footer);
 
 const FooterContainer = styled.footer`
   background-color: #0d0909;

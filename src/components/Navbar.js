@@ -23,8 +23,8 @@ const Nav = styled.nav`
   height: 80px;
   display: flex;
   background: transparent;
+  /* background: var(--primary); */
   justify-content: space-around;
-  font-weight: 700;
 `;
 
 const NavLink = styled(Link)`

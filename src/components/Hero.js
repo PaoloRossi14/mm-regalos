@@ -1,29 +1,22 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
 import ImgBg from "../images/modelo-2.jpg";
 
 function Hero() {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <HeroContainer>
-      <Navbar toggle={toggle} />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
       <HeroContent>
         <HeroItems>
           <h1>
             Contigo <small>en</small> momentos especiales
           </h1>
           <p>Listo en 3 horas</p>
-          <CustomButton variant="contained" color="primary" size="large">
-            Haz tu pedido
-          </CustomButton>
+          <ButtonLink to="/test">
+            <CustomButton variant="contained" color="primary" size="large">
+              Haz tu pedido
+            </CustomButton>
+          </ButtonLink>
         </HeroItems>
       </HeroContent>
     </HeroContainer>
@@ -36,6 +29,7 @@ const HeroContainer = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
     url(${ImgBg});
   height: 100vh;
+  margin-top: -80px;
   background-position: center;
   background-size: cover;
   scroll-snap-align: start;
@@ -80,6 +74,10 @@ const HeroItems = styled.div`
     font-size: clamp(2rem, 2.5vw, 3rem);
     margin-bottom: 2rem;
   }
+`;
+
+const ButtonLink = styled(Link)`
+  text-decoration: none;
 `;
 
 const CustomButton = styled(Button)`

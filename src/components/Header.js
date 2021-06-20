@@ -26,10 +26,11 @@ function Header() {
         <SearchBtn />
       </HeaderSearch>
       <HeaderNav>
-        <HeaderOption to="/products">Boxes</HeaderOption>
-        <HeaderOption to="/">Breakfast</HeaderOption>
+        <HeaderOption to="/products">Productos</HeaderOption>
+        <HeaderOption to="/">Catálogos</HeaderOption>
+        <HeaderOption to="/">Contáctanos</HeaderOption>
         <HeaderOption to={!user && "/login"} onClick={handleSignOut}>
-          {user ? "Sign out" : "Sign in"}
+          {user ? "Cerrar sesión" : "Ingresar"}
         </HeaderOption>
       </HeaderNav>
       <HeaderCart to="/checkout">
@@ -74,6 +75,7 @@ const HeaderSearch = styled.div`
   align-items: center;
   margin: 0 2rem;
   background-color: #fff;
+  padding-left: 1rem;
 
   :focus-within {
     box-shadow: 0 0 0 2px var(--red);

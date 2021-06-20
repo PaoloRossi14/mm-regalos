@@ -5,14 +5,21 @@ import { FaTimes } from "react-icons/fa";
 
 function Sidebar({ isOpen, toggle }) {
   return (
-    <SidebarContainer isOpen={isOpen} onClick={toggle}>
+    <SidebarContainer isOpen={isOpen}>
       <Icon onClick={toggle}>
         <CloseIcon />
       </Icon>
       <SidebarMenu>
-        <SidebarLink to="/products">Boxes</SidebarLink>
-        <SidebarLink to="/">Breakfast</SidebarLink>
-        <SidebarLink to="/">Gifts</SidebarLink>
+        <SidebarLink to="/products">Productos</SidebarLink>
+        <SidebarLink to="/">Catálogos</SidebarLink>
+        <SidebarLinkA
+          href="//api.whatsapp.com/send?phone=51987964162/"
+          target="_blank"
+          aria-label="Contacto"
+          rel="noopener noreferrer"
+        >
+          Contáctanos
+        </SidebarLinkA>
       </SidebarMenu>
       <SideBtnWrap>
         <Link to="/login" style={{ textDecoration: "none" }}>
@@ -71,6 +78,23 @@ const SidebarMenu = styled.div`
 `;
 
 const SidebarLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  list-style: none;
+  transition: 0.2s ease-in-out;
+  color: #000;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--red);
+    transition: 0.2s ease-in-out;
+  }
+`;
+
+const SidebarLinkA = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
