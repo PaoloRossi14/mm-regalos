@@ -1,5 +1,5 @@
-import imgDiaPadre from "../../images/producto_padre_banner.jpg";
-import imgDiaMadre from "../../images/producto_madre_banner.jpg";
+import imgDiaPadre from "images/producto_padre_banner.jpg";
+import imgDiaMadre from "images/producto_madre_banner.jpg";
 
 export const bannerDiaPadre = {
   topline: "Festividades",

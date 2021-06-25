@@ -10,7 +10,7 @@ function Banner(props) {
     >
       <Column>
         <Wrapper>
-          <Topline>{props.topline}</Topline>
+          <Topline lightText={props.lightText}>{props.topline}</Topline>
           <Headline>{props.headline}</Headline>
           <Description>{props.description}</Description>
           <Button
@@ -53,7 +53,7 @@ const BannerContainer = styled.section`
   @media screen and (max-width: 680px) {
     flex-direction: column;
     gap: 2rem;
-    padding: 5rem 0;
+    padding: 2.3rem 0;
   }
 `;
 
@@ -70,7 +70,8 @@ const Wrapper = styled.div`
 
 const Topline = styled.p`
   font-size: 1rem;
-  color: var(--primary);
+  color: ${(props) =>
+    props.lightText ? `var(--primary)` : `var(--primary_dark)`};
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -91,7 +92,7 @@ const Description = styled.p`
 
 const BannerImg = styled.img`
   width: 100%;
-  max-width: 440px;
+  max-width: 400px;
   object-fit: contain;
   box-shadow: 0.5rem 0.5rem
     ${(props) => (props.color ? `var(--primary)` : `var(--primary_dark)`)};

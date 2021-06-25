@@ -2,10 +2,7 @@ import { useHistory } from "react-router-dom";
 import CurrencyFormat from "react-currency-format";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import {
-  getTotalCarrito,
-  selectCarrito,
-} from "../../features/carrito/carritoSlice";
+import { getTotalCarrito, selectCarrito } from "features/carrito/carritoSlice";
 
 function Subtotal() {
   const history = useHistory();

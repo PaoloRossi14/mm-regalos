@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { selectUser } from "../../features/auth/authSlice";
-import { selectCarrito } from "../../features/carrito/carritoSlice";
+import { selectUser } from "features/auth/authSlice";
+import { selectCarrito } from "features/carrito/carritoSlice";
 import styled from "styled-components";
 import CheckoutProduct from "./CheckoutProduct";
 import Subtotal from "./Subtotal";

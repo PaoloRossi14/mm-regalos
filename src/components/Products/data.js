@@ -1,6 +1,6 @@
-import product1 from "../../images/modelo-1.jpg";
-import product2 from "../../images/modelo-3.jpg";
-import product3 from "../../images/modelo-4.jpg";
+import product1 from "images/modelo-1.jpg";
+import product2 from "images/modelo-3.jpg";
+import product3 from "images/modelo-4.jpg";
 
 export const productData = [
   {

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectUser } from "../features/auth/authSlice";
-import { selectCarrito } from "../features/carrito/carritoSlice";
+import { selectUser } from "features/auth/authSlice";
+import { selectCarrito } from "features/carrito/carritoSlice";
 import styled from "styled-components";
 import CheckoutProduct from "./Checkout/CheckoutProduct";
 

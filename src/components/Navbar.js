@@ -1,7 +1,7 @@
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 import { AiFillGift } from "react-icons/ai";
-import logo from "../images/logo.png";
+import logo from "images/logo.png";
 
 function Navbar({ toggle }) {
   return (
@@ -34,6 +34,7 @@ const NavLink = styled(Link)`
   flex-grow: 1;
   justify-content: center;
   align-items: center;
+  text-align: center;
   text-decoration: none;
   cursor: pointer;
   font-weight: 400;
@@ -48,6 +49,10 @@ const NavLogo = styled.img`
   object-fit: contain;
   height: 60px;
   margin: 20px;
+  @media screen and (max-width: 480px) {
+    margin: 0;
+    padding-right: 10px;
+  }
 `;
 
 const NavIcon = styled.div`

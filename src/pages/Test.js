@@ -1,17 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled, { css } from "styled-components";
-import { selectUser, userSignIn } from "../features/auth/authSlice";
+import { selectUser, userSignIn } from "features/auth/authSlice";
 import {
   addItem,
   removeItem,
   selectCarrito,
   getTotalCarrito,
-} from "../features/carrito/carritoSlice";
+} from "features/carrito/carritoSlice";
 import { TextField, Button } from "@material-ui/core";
-import useToggle from "../hooks/useToggle";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
+import useToggle from "hooks/useToggle";
+import Navbar from "components/Navbar";
+import Sidebar from "components/Sidebar";
+import Footer from "components/Footer";
 
 const products = [
   { id: 1, name: "Product 1", price: 100 },

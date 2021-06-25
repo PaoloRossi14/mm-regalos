@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { removeItem } from "../../features/carrito/carritoSlice";
+import { removeItem } from "features/carrito/carritoSlice";
 import styled from "styled-components";
 
 function CheckoutProduct({ id, image, name, price }) {

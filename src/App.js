@@ -1,15 +1,14 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import styled from "styled-components";
-import GlobalTheme from "./styles/GlobalTheme";
-import "./styles/App.css";
+import GlobalTheme from "styles/GlobalTheme";
+import "styles/App.css";
 
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Test from "./pages/Test";
-import Header from "./components/Header";
-import Checkout from "./components/Checkout";
-import Payment from "./components/Payment";
-import ProductsDB from "./components/Products/ProductsDB";
+import Home from "pages/Home";
+import Login from "pages/Login";
+import Test from "pages/Test";
+import Header from "components/Header";
+import Checkout from "components/Checkout";
+import Payment from "components/Payment";
+import ProductsDB from "components/Products/ProductsDB";
 
 function App() {
   return (
@@ -30,9 +29,7 @@ function App() {
 
           <Route path="/products">
             <Header />
-            <SinglePageContainer>
-              <ProductsDB />
-            </SinglePageContainer>
+            <ProductsDB />
           </Route>
 
           <Route path="/test" component={Test} />
@@ -44,11 +41,3 @@ function App() {
 }
 
 export default App;
-
-const SinglePageContainer = styled.div`
-  height: calc(100vh - 152px);
-
-  @media screen and (max-width: 820px) {
-    height: calc(100vh - 182px);
-  }
-`;

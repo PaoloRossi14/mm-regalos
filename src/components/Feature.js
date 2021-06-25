@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
-import FeaturePic from "../images/modelo-2.jpg";
+import FeaturePic from "images/modelo-2.jpg";
 
 function Feature() {
   return (
@@ -19,7 +19,7 @@ function Feature() {
 
 export default Feature;
 
-const FeatureContainer = styled.div`
+const FeatureContainer = styled.section`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
     url(${FeaturePic});
   height: calc(100vh - 99px);
@@ -41,5 +41,9 @@ const FeatureContainer = styled.div`
   p {
     margin-bottom: 1rem;
     font-size: clamp(1rem, 3vw, 2rem);
+  }
+
+  @media screen and (max-width: 820px) {
+    height: calc(100vh - 134px);
   }
 `;

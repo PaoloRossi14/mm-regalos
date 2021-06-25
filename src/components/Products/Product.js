@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addItem } from "../../features/carrito/carritoSlice";
+import { addItem } from "features/carrito/carritoSlice";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
 

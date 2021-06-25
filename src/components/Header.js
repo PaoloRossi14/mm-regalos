@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { selectCarrito } from "../features/carrito/carritoSlice";
+import { selectCarrito } from "features/carrito/carritoSlice";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
-import LogoLarge from "../images/logo-large.png";
+import LogoLarge from "images/logo-large.png";
 import { useDispatch, useSelector } from "react-redux";
-import { selectUser, userSignOut } from "../features/auth/authSlice";
+import { selectUser, userSignOut } from "features/auth/authSlice";
 
 function Header() {
   const user = useSelector(selectUser);

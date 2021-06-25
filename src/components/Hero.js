@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
-import ImgBg from "../images/modelo-2.jpg";
+import ImgBg from "images/modelo-2.jpg";
 
 function Hero() {
   return (
@@ -25,7 +25,7 @@ function Hero() {
 
 export default Hero;
 
-const HeroContainer = styled.div`
+const HeroContainer = styled.section`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
     url(${ImgBg});
   height: 100vh;

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { userRegister, userSignIn } from "../features/auth/authSlice";
+import { userRegister, userSignIn } from "features/auth/authSlice";
 import styled, { css } from "styled-components";
-import logo from "../images/logo.png";
+import logo from "images/logo.png";
 
 function Login() {
   const dispatch = useDispatch();

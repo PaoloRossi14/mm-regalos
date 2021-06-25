@@ -26,7 +26,7 @@ function Products({ heading, data }) {
 
 export default Products;
 
-const ProductsContainer = styled.div`
+const ProductsContainer = styled.section`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@ const ProductsContainer = styled.div`
 `;
 
 const ProductsHeading = styled.h1`
-  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-size: clamp(2rem, 3vw, 4rem);
   text-align: center;
 `;
 
